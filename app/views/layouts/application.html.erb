@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <%# トップページのスライド %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+   <script>
+    $(document).ready(function () {
+      $('.slick').slick({
+        dots: true,
+        autoplay: true
+      });
+    });
+  </script>
+  <%# //トップページのスライド %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FastMarket</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="inner">
+        <div class="nav">
+          <div class="nav__left">
+            <%= link_to image_tag("fastmarket.logo.png", class: :logo), root_path %>
+          </div>
+          <%# ログインしているときは以下を表示するようにしましょう %>
+            <%# <div class="nav__right"> %>
+              <%# <%= link_to "ログアウト", root_path, class: :nav__logout %>
+              <%# <%= link_to "New Proto", root_path, class: :nav__btn %>
+            <%# </div> %>
+          <%# // ログインしているときは上記を表示するようにしましょう %>
+          <%# ログインしていないときは以下を表示するようにしましょう %>
+            <div class="nav__right">
+              <%= link_to "ログイン", root_path, class: :nav__btn %>
+              <%= link_to "新規登録", root_path, class: :nav__btn %>
+            </div>
+          <%# // ログインしていないときは上記を表示するようにしましょう %>
+        </div>
+      </div>
+    </header>
+
+        <ul class="slick">
+          <li><%= link_to image_tag("banner1.jpg", class:"banner_image"), "/" %></li>
+          <li><%= link_to image_tag("banner2.jpg", class:"banner_image"), "/" %></li>
+          <li><%= link_to image_tag("banner3.jpg", class:"banner_image"), "/" %></li>
+        </ul>
+
+    <%= yield %>
+
+
+    <footer class="footer">
+      <p class="copyright">© FAST MARKET All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
