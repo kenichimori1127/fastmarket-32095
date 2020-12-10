@@ -85,11 +85,18 @@ a {
 
 /* スライド */
 .slick{
-width:100%;
-max-width: 100%;
-height: auto;
-    margin: 0px auto;
+    width: 1000px;
+    height: auto;
+    margin: 30px auto;
     display: block
+}
+/* JavaScript が有効な場合に非表示 */
+html.enable-javascript .hide-enable-js{
+  display: none;
+}
+/* JavaScript が無効な場合に非表示 */
+html:not(.enable-javascript) .hide-disable-js{
+  display: none;
 }
 /* フォーム周り */
 
@@ -139,10 +146,11 @@ height: auto;
 /* メイン */
 
 .greeting{
-  margin-bottom: 20px;
+  margin: 5px 10px 0 -25px;
+  text-align: right;
 }
 .greeting__link{
-  text-decoration: underline;
+  text-decoration: none;
 }
 .page-heading {
   font-size: 30px;
@@ -317,8 +325,9 @@ height: auto;
   }
   .slick{
     width: 90%;
-    margin: -20px auto 0;
+    margin: 0px auto;
 }
+
 }
 
  /* スマホ表示 */
@@ -350,6 +359,6 @@ height: auto;
   }
   .slick{
   width: 90%;
-  margin: -150px auto 0;
+  margin: 0px auto;
 }
 }

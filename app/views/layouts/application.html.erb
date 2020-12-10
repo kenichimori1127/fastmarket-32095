@@ -6,10 +6,19 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
    <script>
-    $(document).ready(function () {
-      $('.slick').slick({
-        dots: true,
-        autoplay: true
+   (function(){
+  var html = document.getElementsByTagName('html')||[];
+  html[0].classList.add('enable-javascript');
+  window.addEventListener("load", function(){
+    html[0].classList.add('window-load');
+  }, false);
+})();
+    $(document).on('turbolinks:load', function() {
+      $(document).ready(function () {
+        $('.slick').slick({
+          dots: true,
+          autoplay: true
+        });
       });
     });
   </script>
