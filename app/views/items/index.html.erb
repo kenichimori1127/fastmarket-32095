@@ -1,12 +1,17 @@
 <main class="main">
   <div class="inner">
-    <%# ログインしているときは以下を表示する %>
-      <%# <div class="greeting"> %>
-        <%# こんにちは、 %>
-        <%# <%= link_to "ユーザー名さん", root_path, class: :greeting__link%>
-      <%# </div> %>
-    <%# // ログインしているときは上記を表示する %>
+   <% if user_signed_in? %>
+      <div class="greeting">
+        こんにちは、
+        <%= link_to "#{current_user.nickname}さん", root_path, class: :greeting__link %>
+      </div>
+    <% end %>
     <div class="card__wrapper">
+      <ul class="slick">
+    <li><%= link_to image_tag("banner1.jpg", class:"banner_image"), "/" %></li>
+    <li><%= link_to image_tag("banner2.jpg", class:"banner_image"), "/" %></li>
+    <li><%= link_to image_tag("banner3.jpg", class:"banner_image"), "/" %></li>
+  </ul>
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
     </div>
   </div>

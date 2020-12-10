@@ -8,7 +8,6 @@
 | family_name        | string       | null: false                          | <!--苗字-->
 | first_name_kana    | string       | null: false                          | <!--名前(カナ)-->
 | family_name_kana   | string       | null: false                          | <!--苗字(カナ)-->
-| birth_date         | date         | null: false                          | <!--生年月日-->
 | phone_number       | string       | null: false, foreign_key: true       | <!--電話番号-->
 
 ### Association
