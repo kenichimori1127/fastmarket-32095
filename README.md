@@ -34,11 +34,25 @@
 - belongs_to :user <!--1対1(参照元テーブル → 参照先テーブル)-->
 
 
-## chatsテーブル (チャット)
+## roomsテーブル (チャット)
+| Column           | Type         | Options                        |
+| ---------------- | ------------ | ------------------------------ |
+| name        | string       | null: false, foreign_key: true |
+
+
+| Column           | Type         | Options                        |
+| ---------------- | ------------ | ------------------------------ |
+| user_id          | integer      | null: false, foreign_key: true |
+| staff_id         | integer      | null: false, foreign_key: true |
+| room             |
+| text             | text         | null: false                    |
+
+### Association
+
+
+## messagesテーブル (コメント)
 | Column           | Type         | Options                        |
 | ---------------- | ------------ | ------------------------------ |
 | user_id          | integer      | null: false, foreign_key: true |
 | staff_id         | integer      | null: false, foreign_key: true |
 | text             | text         | null: false                    |
-
-### Association
